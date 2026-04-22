@@ -1,0 +1,12 @@
+import { BodyPartController, EquipmentController, ExerciseController, MuscleController } from './modules/index.js';
+import { App } from './app.js';
+const app = new App([
+    new ExerciseController(),
+    new MuscleController(),
+    new EquipmentController(),
+    new BodyPartController()
+]).getApp();
+export default {
+    fetch: app.fetch,
+    port: 80
+};
